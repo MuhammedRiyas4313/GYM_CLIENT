@@ -15,7 +15,7 @@ export default function CancelationModal({token, setCancelation,courseId,userId,
     setCancelation(state => !state)
     cancelCourse(token, courseId, userId).then((res)=>{
       setCourseCancel(state => !state)
-      toast.warn(res.data.status)
+      toast.warn(res?.data?.status)
     })
 
   }

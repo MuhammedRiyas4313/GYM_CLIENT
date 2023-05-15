@@ -65,7 +65,7 @@ function Chat() {
   },[messages])
 
   async function setChat(conversation) {
-    const friendId = conversation.members.find((m) => m !== adminId);
+    const friendId = conversation?.members.find((m) => m !== adminId);
     const findUser = async () => {
       const friend = await getUser(friendId);
       setUser(friend);
@@ -77,7 +77,7 @@ function Chat() {
   function sendMessage(){
     console.log(newMessage)
     const data = {
-      conversationId:currentChat._id,
+      conversationId:currentChat?._id,
       sender:adminId,
       text:newMessage,
     }

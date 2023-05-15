@@ -6,15 +6,15 @@ import { getUserCourseList } from "../../../axios/services/clientServices/client
 function Courses() {
 
   const User = useSelector((state) => state.userReducer.user);
-  const userId = User.user._id;
-  const token = User.token;
+  const userId = User?.user._id;
+  const token = User?.token;
 
   const [courses, setCourses] = useState([]);
   const [cancelCourse, setCourseCancel] = useState(false)
   
   useEffect(() => {
     getUserCourseList(token,userId).then((res) => {
-      setCourses(res.data.courses);
+      setCourses(res?.data?.courses);
     });
   }, [cancelCourse]);
 

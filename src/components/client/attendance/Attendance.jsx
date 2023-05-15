@@ -17,7 +17,7 @@ function Attendance() {
 
   useEffect(() => {
     getAttendanceDetails(token, courseId, clientId).then((res) => {
-      setAttdnce(res.data);
+      setAttdnce(res?.data);
     });
   }, []);
 
@@ -50,13 +50,13 @@ function Attendance() {
                         </tr>
                       </thead>
                       <tbody>
-                        {attdnce.map((val,ind) => {
+                        {attdnce?.map((val,ind) => {
                           return (
                             <tr>
                               <th>{ind + 1}</th> 
-                              <td>{val.date}</td>
-                              <td>{val.status}</td>
-                              <td>{val.reason}</td>
+                              <td>{val?.date}</td>
+                              <td>{val?.status}</td>
+                              <td>{val?.reason}</td>
                             </tr>
                           );
                         })}

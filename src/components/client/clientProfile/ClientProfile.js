@@ -38,7 +38,7 @@ function ClientProfile() {
 
   useEffect(() => {
     getUserDetails(token,userId).then((res) => {
-      setUserDetails(res.data);
+      setUserDetails(res?.data);
     });
   }, []);
 
@@ -91,7 +91,7 @@ function ClientProfile() {
                   >
                     <img
                       src={
-                        userDetails?.profile ? userDetails.profile : userAvatar
+                        userDetails?.profile ? userDetails?.profile : userAvatar
                       }
                       alt="trainer profile"
                       className="hover:tooltip-bottom"
@@ -196,11 +196,11 @@ function ClientProfile() {
                   </li>
                   <li className="flex items-center py-3">
                     <span>Email</span>
-                    <span className="ml-auto">{userDetails.email}</span>
+                    <span className="ml-auto">{userDetails?.email}</span>
                   </li>
                   <li className="flex items-center py-3">
                     <span>Phone</span>
-                    <span className="ml-auto">{userDetails.phone}</span>
+                    <span className="ml-auto">{userDetails?.phone}</span>
                   </li>
                   {/* <li className="flex items-center py-3">
                   <span>Status</span>
@@ -219,7 +219,7 @@ function ClientProfile() {
                   <li className="flex items-center py-3">
                     <span>Member since</span>
                     <span className="ml-auto">
-                      {formateDate(userDetails.createdAt)}
+                      {formateDate(userDetails?.createdAt)}
                     </span>
                   </li>
                   {/* <li className="flex items-center py-3">

@@ -70,7 +70,7 @@ function Chat() {
   },[messages])
 
   async function setChat(conversation) {
-    const friendId = conversation.members.find((m) => m !== userId);
+    const friendId = conversation?.members?.find((m) => m !== userId);
     const findUser = async () => {
       const friend = await getUser(friendId);
       setUser(friend);
@@ -88,7 +88,7 @@ function Chat() {
 
   function sendMessage(){
     const data = {
-      conversationId:currentChat._id,
+      conversationId:currentChat?._id,
       sender:userId,
       text:newMessage,
     }
@@ -106,7 +106,7 @@ function Chat() {
 
   async function videoCall (){
     navigate("/videocall", {
-      state: { trainerId: user._id, clientId:userId, conversationId:currentChat._id, name: UserDetails.user.fname  },
+      state: { trainerId: user?._id, clientId:userId, conversationId:currentChat?._id, name: UserDetails.user?.fname  },
     });
  }
 
