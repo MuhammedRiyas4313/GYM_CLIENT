@@ -90,6 +90,7 @@ export const getTrainerDetails = async (token,trainerId) => {
 };
 
 export const verifyTrainer = async (token,trainerId) => {
+  console.log(token,'token in admin service verify trainer........')
   const userDummy = {
     user: true
   }
