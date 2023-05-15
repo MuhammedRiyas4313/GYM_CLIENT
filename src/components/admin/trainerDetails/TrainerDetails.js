@@ -55,8 +55,8 @@ function TrainerDetails() {
       setFormattedDate(formated);
       const url = res?.data?.data?.link;
       const Url = res?.data?.data?.certificate;
-      const yUrl = url.replace(/"/g, "");
-      const pdfUrl = Url.replace(/"/g, "");
+      const yUrl = url?.replace(/"/g, "");
+      const pdfUrl = Url?.replace(/"/g, "");
       setUrlFormated(yUrl);
       setPdfFormated(pdfUrl);
     }
