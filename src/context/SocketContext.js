@@ -5,16 +5,13 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-const socket = io("http://localhost:3001");
+const socket = io("https://gym-trainers-management.onrender.com");
 
 const ContextProvider = ({ children }) => {
   const location = useLocation();
 
   const conversation = location?.state?.conversationId;
   const fname = location?.state?.name;
-
-  console.log(fname, "fname from context ");
-  console.log(conversation, "conversation from context ");
 
   const [stream, setStream] = useState(null);
   const [me, setMe] = useState("");

@@ -6,7 +6,7 @@ import ChatList from './ChatList'
 import Messages from "./Messages";
 import {io} from 'socket.io-client'
 
-const END_POINT = 'http://localhost:3001'
+const END_POINT = 'https://gym-trainers-management.onrender.com'
 var socket,selectedChatCompare
 
 function Chat() {
