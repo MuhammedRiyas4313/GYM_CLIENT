@@ -46,6 +46,7 @@ function TrainerDetails() {
   async function confirmation(val,token) {
     if (val) {
       const res = await verifyTrainer(token,trainerId);
+      console.log(res,'verify trainer response')
       if (res) toast.success(res?.data?.message);
       setTrainerDetails(res?.data?.data);
       const formatDate = new Date(res?.data?.data?.createdAt);
