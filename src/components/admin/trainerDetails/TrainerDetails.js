@@ -43,10 +43,9 @@ function TrainerDetails() {
     setConfirmationModal(true);
   }
 
-  async function confirmation(val) {
+  async function confirmation(val,token) {
     if (val) {
       const res = await verifyTrainer(token,trainerId);
-      console.log(res.data.data, "verified Trainer..");
       if (res) toast.success(res.data.message);
       setTrainerDetails(res.data.data);
       const formatDate = new Date(res.data.data.createdAt);
@@ -56,12 +55,8 @@ function TrainerDetails() {
       setFormattedDate(formated);
       const url = res.data.data.link;
       const Url = res.data.data.certificate;
-      console.log(url, "url of the youtube vivdeppp");
-      console.log(Url, "url of the certificate vivdeppp");
       const yUrl = url.replace(/"/g, "");
       const pdfUrl = Url.replace(/"/g, "");
-      console.log(yUrl, "link of the yutube video converted");
-      console.log(pdfUrl, "link of the certificate converted");
       setUrlFormated(yUrl);
       setPdfFormated(pdfUrl);
     }
@@ -77,6 +72,7 @@ function TrainerDetails() {
         </div>
         {confirmationModalShow ? (
           <VerificationModal
+            token={token}
             modalShow={setConfirmationModal}
             confirmation={confirmation}
           />
