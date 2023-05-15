@@ -23,14 +23,14 @@ function TrainerDetails() {
 
   useEffect(() => {
     getTrainerDetails(token,trainerId).then((res) => {
-      setTrainerDetails(res.data);
-      const formatDate = new Date(res.data.createdAt);
+      setTrainerDetails(res?.data);
+      const formatDate = new Date(res?.data?.createdAt);
       const formated = `${formatDate.getDate()}-${
         formatDate.getMonth() + 1
       }-${formatDate.getFullYear()}`;
       setFormattedDate(formated);
-      const url = res.data.link;
-      const Url = res.data.certificate;
+      const url = res?.data?.link;
+      const Url = res?.data?.certificate;
       const yUrl = url.replace(/"/g, "");
       const pdfUrl = Url.replace(/"/g, "");
       setUrlFormated(yUrl);
@@ -86,12 +86,12 @@ function TrainerDetails() {
                 <div className="image overflow-hidden flex align-middle justify-center">
                   <img
                     className="rounded w-52 h-72"
-                    src={trainerDetails.profile}
+                    src={trainerDetails?.profile}
                     alt="Extra large avatar"
                   ></img>
                 </div>
                 <h1 className="text-gray-900 font-bold text-xl leading-8 mt-3 mb-3 flex justify-center uppercase">
-                  {trainerDetails.fname}
+                  {trainerDetails?.fname}
                 </h1>
                 <h3 className="text-gray-600 font-lg text-center text-semibold leading-6">
                   Trainer at GYM FITNESS Company Inc.
@@ -105,7 +105,7 @@ function TrainerDetails() {
                   <li className="flex items-center py-3">
                     <span>Status</span>
                     <span className="ml-auto">
-                      {trainerDetails.isVerified ? (
+                      {trainerDetails?.isVerified ? (
                         <span className="bg-green-500 py-1 px-2 rounded text-white text-sm">
                           Verified
                         </span>
@@ -148,25 +148,21 @@ function TrainerDetails() {
                   <div className="grid md:grid-cols-2 text-sm">
                     <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">First Name</div>
-                      <div className="px-4 py-2">{trainerDetails.fname}</div>
-                    </div>
-                    <div className="grid grid-cols-2">
-                      <div className="px-4 py-2 font-semibold">Last Name</div>
-                      <div className="px-4 py-2">{trainerDetails.lname}</div>
+                      <div className="px-4 py-2">{trainerDetails?.fname}</div>
                     </div>
                     <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Gender</div>
-                      <div className="px-4 py-2">{trainerDetails.gender}</div>
+                      <div className="px-4 py-2">{trainerDetails?.gender}</div>
                     </div>
                     <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Contact No.</div>
-                      <div className="px-4 py-2">{trainerDetails.phone}</div>
+                      <div className="px-4 py-2">{trainerDetails?.phone}</div>
                     </div>
                     <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Email.</div>
                       <div className="px-4 py-2">
                         <a className="text-blue-800 break-words">
-                          {trainerDetails.email}
+                          {trainerDetails?.email}
                         </a>
                       </div>
                     </div>
@@ -174,7 +170,7 @@ function TrainerDetails() {
                       <div className="px-4 py-2 font-semibold">
                         Date of Birth
                       </div>
-                      <div className="px-4 py-2">{trainerDetails.dob}</div>
+                      <div className="px-4 py-2">{trainerDetails?.dob}</div>
                     </div>
                   </div>
                 </div>
@@ -264,7 +260,7 @@ function TrainerDetails() {
                 </div>
               </div>
               <div className="flex justify-end mb-10 p-20">
-                {!trainerDetails.isVerified ? (
+                {!trainerDetails?.isVerified ? (
                   <button
                     onClick={verificationTrainer}
                     className=" text-white text-sm font-semibold rounded-lg hover:bg-blue-900 focus:outline-none focus:shadow-outline focus:bg-blue-600 bg-blue-600 hover:shadow-xs p-3 my-4"
