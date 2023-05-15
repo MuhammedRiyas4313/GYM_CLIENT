@@ -46,15 +46,15 @@ function TrainerDetails() {
   async function confirmation(val,token) {
     if (val) {
       const res = await verifyTrainer(token,trainerId);
-      if (res) toast.success(res.data.message);
-      setTrainerDetails(res.data.data);
-      const formatDate = new Date(res.data.data.createdAt);
+      if (res) toast.success(res?.data?.message);
+      setTrainerDetails(res?.data?.data);
+      const formatDate = new Date(res?.data?.data?.createdAt);
       const formated = `${formatDate.getDate()}-${
         formatDate.getMonth() + 1
       }-${formatDate.getFullYear()}`;
       setFormattedDate(formated);
-      const url = res.data.data.link;
-      const Url = res.data.data.certificate;
+      const url = res?.data?.data?.link;
+      const Url = res?.data?.data?.certificate;
       const yUrl = url.replace(/"/g, "");
       const pdfUrl = Url.replace(/"/g, "");
       setUrlFormated(yUrl);
