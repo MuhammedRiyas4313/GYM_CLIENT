@@ -90,6 +90,9 @@ export const getTrainerDetails = async (token,trainerId) => {
 };
 
 export const verifyTrainer = async (token,trainerId) => {
+  const userDummy = {
+    user: true
+  }
   const config = {
     headers: {
       Accept: "application/json",
@@ -98,10 +101,7 @@ export const verifyTrainer = async (token,trainerId) => {
     },
   };
   try {
-    const response = await axiosAdminInstance.patch(
-      `/verifytrainer?trainerId=${trainerId}`,
-      config
-    );
+    const response = await axiosAdminInstance.patch(`/verifytrainer?trainerId=${trainerId}`,userDummy,config);
     return response;
   } catch (error) {
     console.log("error in client login......");

@@ -13,14 +13,12 @@ function Notifications() {
     const [trainersToVerify, setTrainersToVerify] = useState([])
 
     function viewDetails(trainerId){
-      console.log(trainerId,'view details trainer ')
       navigate('/admin/trainerdetails', { state: { trainerId: trainerId } });
     }
 
     function formateDate(date){
       const formatDate = new Date(date)
       const formated = `${formatDate.getDate()}-${formatDate.getMonth() + 1}-${formatDate.getFullYear()}`
-      console.log('formate date is calling.....')
       return formated
     }
 

@@ -16,7 +16,7 @@ export default function Modal(props) {
 
   function verificationDenied(){
     props.modalShow(false)
-    props.confirmation(false)
+    props.confirmation(false,props.token)
   }
 
   return (
