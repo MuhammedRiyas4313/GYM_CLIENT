@@ -45,6 +45,7 @@ function Signin() {
         toast.error(response?.data?.status);
       }
     } else if (loginPerson === "trainer") {
+      console.log(values,'values in trainer login.......')
       const response = await TrainerLogin(values);
       if (response?.status === "Login success") {
         setLoader(false);

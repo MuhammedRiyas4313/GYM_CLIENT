@@ -18,7 +18,8 @@ export const trainerRegister = async (value) => {
   }
 };
 
-export const TrainerLogin = async (token, value) => {
+export const TrainerLogin = async (value) => {
+  console.log(value,'login values...in trainer')
   const config = {
     headers: {
       "Content-Type": "application/json",
