@@ -61,30 +61,3 @@ function GoogleButtonUser(props) {
 };
 
 export default GoogleButtonUser;
-
-
-
-
-
-// async function handleCallbackResponse(response) {
-//   props.setLoader(true);
-//   const user = jwt_decode(response.credential);
-
-//     const loginResponse = await ClientLoginWithGoogle(user.email);
-//     if (loginResponse?.data.status === "Login success") {
-//       props.setLoader(false);
-//       dispatch(
-//         userLogin({ token: loginResponse.data.token, user: loginResponse.data.user })
-//       );
-//       toast.success(loginResponse.data.status);
-//       navigate("/");
-//     } else if (loginResponse?.data.status === "User is not verified") {
-//       props.setLoader(false);
-//       toast.error(loginResponse.data.message);
-//       navigate(`/verification/${loginResponse.data.data.userId}`);
-//     } else {
-//       props.setLoader(false);
-//       toast.error(loginResponse.data.status);
-//     }
-  
-// }
