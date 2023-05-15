@@ -106,7 +106,7 @@ export const verifyTrainer = async (token,trainerId) => {
     const response = await axiosAdminInstance.patch(`/verifytrainer?trainerId=${trainerId}`,userDummy,config);
     return response;
   } catch (error) {
-    console.log("error verfy trainer....");
+    console.log(error.message,"error verify trainer....");
   }
 };
 
