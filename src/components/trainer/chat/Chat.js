@@ -14,7 +14,7 @@ import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 
 const END_POINT = "https://gym-trainers-management.onrender.com";
-var socket;
+var socket, selectedChatCompare
 
 function Chat() {
 
@@ -65,6 +65,7 @@ function Chat() {
   useEffect(() => {
     socket.on("recieve_message", (data) => {
       if (data?.conversationId === currentChat?._id) {
+        console.log('recieve message on trainer')
         const message = [...messages, data];
         setMessages(message);
       }

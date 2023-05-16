@@ -7,7 +7,7 @@ import Messages from "./Messages";
 import {io} from 'socket.io-client'
 
 const END_POINT = 'https://gym-trainers-management.onrender.com'
-var socket,selectedChatCompare
+var socket, selectedChatCompare
 
 function Chat() {
 

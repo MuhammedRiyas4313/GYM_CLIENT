@@ -9,7 +9,7 @@ import {io} from 'socket.io-client'
 import { useNavigate } from "react-router-dom";
 
 const END_POINT = 'https://gym-trainers-management.onrender.com'
-var socket
+var socket, selectedChatCompare
 
 function Chat() {
 
