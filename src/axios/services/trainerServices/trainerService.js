@@ -71,7 +71,7 @@ export const getTrainerDetails = async (token, trainerId) => {
     );
     return response;
   } catch (error) {
-    console.log("error in client login......");
+    console.log(error.message,"error in getTrainerDetails......");
   }
 };
 

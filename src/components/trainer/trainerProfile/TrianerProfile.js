@@ -17,6 +17,10 @@ function TrianerProfile() {
   const [updateProfileImage, setUpdateProfileImage] = useState(false);
   const [updateProfile, setUpdateProfile] = useState(false);
 
+  const trainer = useSelector((state) => state.trainerReducer.trainer);
+  let trainerId = trainer?.trainer._id;
+  let token = trainer?.token;
+
   function options() {
     setOption((state) => !state);
   }
@@ -29,11 +33,9 @@ function TrianerProfile() {
     return formated;
   }
 
-  useEffect(() => {}, [option]);
+  useEffect(() => {
 
-  const trainer = useSelector((state) => state.trainerReducer.trainer);
-  let trainerId = trainer?.trainer._id;
-  let token = trainer?.token;
+  }, [option]);
 
 
   useEffect(() => {
