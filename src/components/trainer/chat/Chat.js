@@ -13,8 +13,8 @@ import Picker from "emoji-picker-react";
 import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 
-const END_POINT = "http://localhost:3001";
-var socket, selectedChatCompare;
+const END_POINT = "https://gym-trainers-management.onrender.com";
+var socket;
 
 function Chat() {
 
