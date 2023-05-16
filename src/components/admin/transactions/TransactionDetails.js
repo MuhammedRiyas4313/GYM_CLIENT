@@ -32,7 +32,7 @@ export default function TransactionDetails({ transactionId }) {
   }
 
   async function recieved(clientId) {
-    const res = await getTransactionClients(clientId);
+    const res = await getTransactionClients(token,clientId);
     setReciever(res?.data);
   }
 
