@@ -46,6 +46,7 @@ const ContextProvider = ({ children }) => {
     setName(fname);
     socket.on("calluser", ({ from, name: callerName, signal }) => {
       setCall({ isReceivedCall: true, from, name: callerName, signal });
+      myVideo.current.srcObject = stream;
     });
   }, []);
 
@@ -58,6 +59,7 @@ const ContextProvider = ({ children }) => {
     });
     peer.on("stream", (currentStream) => {
       userVideo.current.srcObject = currentStream;
+      myVideo.current.srcObject = stream
     });
     peer.signal(call.signal);
     connectionRef.current = peer;
@@ -93,23 +95,7 @@ const ContextProvider = ({ children }) => {
   };
   return (
     <SocketContext.Provider
-      value={{
-        call,
-        callAccepted,
-        myVideo,
-        userVideo,
-        stream,
-        setCallTo,
-        callTo,
-        name,
-        setName,
-        callEnded,
-        me,
-        callUser,
-        leaveCall,
-        answerCall,
-      }}
-    >
+      value={{ call, callAccepted, myVideo, userVideo, stream, setCallTo, callTo, name, setName, callEnded, me, callUser, leaveCall, answerCall,}} >
       {children}
     </SocketContext.Provider>
   );

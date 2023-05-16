@@ -46,7 +46,6 @@ function Player() {
             </Typography>
             <video
               playsInline
-              muted
               ref={myVideo}
               autoPlay
               controlsList="fullscreen"
@@ -63,7 +62,6 @@ function Player() {
             </Typography>
             <video
               playsInline
-              muted
               ref={userVideo}
               autoPlay
               className={classes.video}
