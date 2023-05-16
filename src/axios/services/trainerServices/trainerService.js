@@ -56,7 +56,9 @@ export const TrainerLoginWithGoogle = async (email) => {
 };
 
 export const getTrainerDetails = async (token, trainerId) => {
-  console.log("token..", token);
+  
+  try {
+    console.log("token..", token);
   const config = {
     headers: {
       Accept: "application/json",
@@ -64,11 +66,7 @@ export const getTrainerDetails = async (token, trainerId) => {
       "Content-Type": "application/json",
     },
   };
-  try {
-    const response = await axiosTrainerInstance.get(
-      `/trainerdetails?trainerId=${trainerId}`,
-      config
-    );
+    const response = await axiosTrainerInstance.get(`/trainerdetails?trainerId=${trainerId}`, config );
     return response;
   } catch (error) {
     console.log(error.message,"error in getTrainerDetails......");
