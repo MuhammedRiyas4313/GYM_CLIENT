@@ -19,9 +19,10 @@ export default function TransactionDetails({ transactionId }) {
 
   useEffect(() => {
     getTransaction(token,transactionId).then((res) => {
-      setTransaction(res.data);
-      payee(res.data.payee);
-      recieved(res.data.reciever);
+      setTransaction(res?.data);
+      payee(res?.data?.payee);
+      console.log(res?.data?.reciever,'reciever in admin transaction.....')
+      recieved(res?.data?.reciever);
     });
   }, []);
 

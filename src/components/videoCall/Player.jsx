@@ -49,7 +49,6 @@ function Player() {
               muted
               ref={myVideo}
               autoPlay
-              controls
               controlsList="fullscreen"
               className={classes.video}
             />
@@ -67,7 +66,6 @@ function Player() {
               muted
               ref={userVideo}
               autoPlay
-              controls
               className={classes.video}
             />
           </Grid>
