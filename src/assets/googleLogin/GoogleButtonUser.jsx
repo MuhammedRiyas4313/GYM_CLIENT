@@ -44,8 +44,8 @@ function GoogleButtonUser(props) {
 
   return (
     <>
-      <GoogleOAuthProvider clientId="230039992190-7tpf0eapq82majvk7r7uj7c72fqnqtau.apps.googleusercontent.com" >
-        <button className="flex items-center  justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative">
+      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID} >
+        <button className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative">
           <span className="absolute left-4"></span>
           <span className="flex items-center text-black">
             <GoogleLogin

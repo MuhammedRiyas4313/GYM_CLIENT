@@ -12,6 +12,7 @@ import { trainerLogin } from "../../redux/trainerSlice";
 
 function GoogleButtonTrainer(props) {
   
+  console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID,'google client ID')
 
   const navigate = useNavigate();
   const dispatch = useDispatch()
@@ -43,7 +44,7 @@ function GoogleButtonTrainer(props) {
 
   return (
     <>
-      <GoogleOAuthProvider clientId="230039992190-7tpf0eapq82majvk7r7uj7c72fqnqtau.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
         <button className="flex items-center  justify-center flex-none px-3 py-2 md:px-4 md:py-3  rounded-lg font-medium  relative">
           <span className="absolute left-4"></span>
           <span className="flex items-center text-black">
